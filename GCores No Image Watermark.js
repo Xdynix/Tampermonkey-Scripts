@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         GCores No Image Watermark
-// @require      http://code.jquery.com/jquery-3.3.1.min.js
-// @version      0.3.0
+// @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
+// @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
+// @version      0.3.1
 // @description  Remove image watermarks on GCores.
-// @author       kurimuzonkoa
+// @author       Xdynix
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/GCores%20No%20Image%20Watermark.js
+// @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        https://www.gcores.com/*
-// @run-at       document-idle
 // @grant        none
 // ==/UserScript==
 

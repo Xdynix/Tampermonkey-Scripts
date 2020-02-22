@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         AdBlock JS
-// @require      http://code.jquery.com/jquery-3.3.1.min.js
-// @version      0.1.1
+// @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
+// @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
+// @version      0.1.2
 // @description  Custome ad-block using js.
-// @author       kurimuzonkoa
+// @author       Xdynix
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/AdBlock%20JS.js
+// @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==

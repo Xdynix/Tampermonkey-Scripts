@@ -1,8 +1,11 @@
 // ==UserScript==
 // @name         HTTP to HTTPS
-// @version      0.1
+// @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
+// @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
+// @version      0.1.1
 // @description  Redirect sites in list.
-// @author       kurimuzonkoa
+// @author       Xdynix
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/HTTP%20to%20HTTPS.js
 // @match        http://*/*
 // @grant        none
 // ==/UserScript==

@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         Free Copy
-// @require      http://code.jquery.com/jquery-3.3.1.min.js
-// @version      0.1
+// @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
+// @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
+// @version      0.1.1
 // @description  Enable copying on some sites.
-// @author       kurimuzonkoa
+// @author       Xdynix
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Free%20Copy.js
+// @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
