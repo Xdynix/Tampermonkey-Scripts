@@ -6,6 +6,7 @@
 // @description  Remove image watermarks on GCores.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/GCores%20No%20Image%20Watermark.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/GCores%20No%20Image%20Watermark.js
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        https://www.gcores.com/*
 // @grant        none

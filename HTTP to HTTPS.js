@@ -6,6 +6,7 @@
 // @description  Redirect sites in list.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/HTTP%20to%20HTTPS.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/HTTP%20to%20HTTPS.js
 // @match        http://*/*
 // @grant        none
 // ==/UserScript==

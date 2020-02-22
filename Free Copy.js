@@ -6,6 +6,7 @@
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Free%20Copy.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Free%20Copy.js
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        *://*/*
 // @grant        none
