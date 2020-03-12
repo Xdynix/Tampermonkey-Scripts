@@ -2,7 +2,7 @@
 // @name         Pixiv Tag to Dic
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.1
+// @version      0.1.2
 // @description  Add link from Pixiv tag page to dictionary page.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Pixiv%20Tag%20to%20Dic.js
@@ -12,24 +12,24 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     const $ = window.jQuery.noConflict(true);
 
     function loopApplyIfMatch(callback, selector, interval = 100) {
-        const loop = setInterval(function() {
+        const loop = setInterval(function () {
             const elements = $(selector);
             if (elements.length) {
                 callback(elements, loop);
             }
         }, interval);
-    };
+    }
 
     const tagNameMatch = location.pathname.match(/\/tags\/(.+?)\/.+/i);
     if (tagNameMatch !== null) {
         const tagName = decodeURIComponent(tagNameMatch[1]);
-        loopApplyIfMatch(function(elements, loop) {
+        loopApplyIfMatch(function (elements, loop) {
             const novelButton = $(elements[0]);
             const dicButton = novelButton.clone();
             dicButton.attr({

@@ -2,7 +2,7 @@
 // @name         GCores No Image Watermark
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.3.1
+// @version      0.3.2
 // @description  Remove image watermarks on GCores.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/GCores%20No%20Image%20Watermark.js
@@ -31,10 +31,10 @@
                 const urlParams = new URLSearchParams(url.search);
                 const ossProcess = urlParams.get('x-oss-process');
                 if (ossProcess !== null) {
-                    const parameters = ossProcess.split('/').filter((param, idx, array) => {
+                    const parameters = ossProcess.split('/').filter((param) => {
                         if (param === 'content_watermark') return false;
                         if (param.startsWith('watermark')) return false;
-                        return true;
+                        return 1;
                     });
                     urlParams.set('x-oss-process', parameters.join('/'));
                 }
@@ -45,7 +45,7 @@
     ];
     function processElements(elements, attrName) {
         elements.each(function() {
-            for (var i = 0; i < imageUrlPatterns.length; ++i) {
+            for (let i = 0; i < imageUrlPatterns.length; ++i) {
                 const pattern = imageUrlPatterns[i][0];
                 const replace = imageUrlPatterns[i][1];
                 const oldUrl = this.getAttribute(attrName);
@@ -61,8 +61,9 @@
     }
 
     setInterval(function() {
-        processElements($('img'), 'data-original');
-        processElements($('img'), 'src');
+        const img = $('img');
+        processElements(img, 'data-original');
+        processElements(img, 'src');
         processElements($('a'), 'href');
     }, 100);
 

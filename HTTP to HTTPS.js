@@ -2,7 +2,7 @@
 // @name         HTTP to HTTPS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.1
+// @version      0.1.2
 // @description  Redirect sites in list.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/HTTP%20to%20HTTPS.js
@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     const hostList = [

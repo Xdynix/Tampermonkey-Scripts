@@ -2,8 +2,8 @@
 // @name         AdBlock JS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.3
-// @description  Custome ad-block using js.
+// @version      0.1.4
+// @description  Custom ad-block using js.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/AdBlock%20JS.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/AdBlock%20JS.js
@@ -12,20 +12,20 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     const $ = window.jQuery.noConflict(true);
     const url = new URL(window.location.href);
 
     function loopApplyIfMatch(callback, selector, interval = 100) {
-        const loop = setInterval(function() {
+        const loop = setInterval(function () {
             const elements = $(selector);
             if (elements.length) {
                 callback(elements, loop);
             }
         }, interval);
-    };
+    }
 
     if (url.host === 'tieba.baidu.com') {
         $('.wrap1').css({background: 'initial', 'background-color': '#dceffe'});
@@ -39,8 +39,8 @@
     if (url.host === 'www.pixiv.net') {
         $('#js-mount-point-header').removeClass('with-ad');
         $('.ad-footer').remove();
-        loopApplyIfMatch(function(elements, loop) {
-            elements.each(function() {
+        loopApplyIfMatch(function (elements, loop) {
+            elements.each(function () {
                 const e = $(this);
                 if (e.css('height') === '60px' && e.css('display') === 'flex') {
                     e.css('height', '0px');

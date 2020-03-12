@@ -2,7 +2,7 @@
 // @name         Free Copy
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.1
+// @version      0.1.2
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Free%20Copy.js
@@ -12,7 +12,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     const $ = window.jQuery.noConflict(true);
@@ -25,12 +25,13 @@
     }
 
     if (url.host === 'pad.skyozora.com' && url.pathname.startsWith('/news')) {
-        $('*').css('user-select', 'auto');
-        $('*').css('-ms-user-select', 'auto');
-        $('*').css('-moz-user-select', 'auto');
-        $('*').css('-khtml-user-select', 'auto');
-        $('*').css('-webkit-user-select', 'auto');
-        $('*').css('-webkit-touch-callout', 'default');
+        $('*')
+            .css('user-select', 'auto')
+            .css('-ms-user-select', 'auto')
+            .css('-moz-user-select', 'auto')
+            .css('-khtml-user-select', 'auto')
+            .css('-webkit-user-select', 'auto')
+            .css('-webkit-touch-callout', 'default');
     }
     if (url.host === 'www.anitama.cn') {
         $('#area-content-article').on('copy', onCopy);

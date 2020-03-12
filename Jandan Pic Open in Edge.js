@@ -2,8 +2,8 @@
 // @name         Jandan Pic Open in Edge
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.2.1
-// @description  Enable open Jandan Pic in Edge, whicn is easier to copy gif.
+// @version      0.2.2
+// @description  Enable open Jandan Pic in Edge, which is easier to copy gif.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Jandan%20Pic%20Open%20in%20Edge.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Jandan%20Pic%20Open%20in%20Edge.js
@@ -12,13 +12,13 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     const $ = window.jQuery.noConflict(true);
     const protocol = window.location.protocol;
-    $('a.view_img_link').each(function() {
-        var url = this.href;
+    $('a.view_img_link').each(function () {
+        let url = this.href;
         if (!/^https?:\/\//i.test(url)) {
             url = protocol + url;
         }
