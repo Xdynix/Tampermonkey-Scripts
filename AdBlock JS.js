@@ -2,7 +2,7 @@
 // @name         AdBlock JS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.2
+// @version      0.1.3
 // @description  Custome ad-block using js.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/AdBlock%20JS.js
@@ -29,6 +29,9 @@
 
     if (url.host === 'tieba.baidu.com') {
         $('.wrap1').css({background: 'initial', 'background-color': '#dceffe'});
+    }
+    if (url.host.endsWith('wikihow.com')) {
+        $('.wh_ad_inner').remove();
     }
     if (url.host === 'www.tsdm.live' && url.pathname.startsWith('/plugin.php')) {
         $('.qdsmile li a').removeAttr('href').removeAttr('target');
