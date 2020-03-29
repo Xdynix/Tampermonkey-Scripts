@@ -2,7 +2,7 @@
 // @name         Free Copy
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.2
+// @version      0.1.3
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Free%20Copy.js
@@ -40,6 +40,9 @@
         $(document).on('copy', onCopy);
         $('.article-holder').on('copy', onCopy);
         $('.unable-reprint').css('user-select', 'text');
+    }
+    if (url.host === 'www.zhihu.com') {
+        $(document).on('copy', onCopy);
     }
 
     console.log("Freedom!!!");
