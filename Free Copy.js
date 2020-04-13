@@ -2,7 +2,7 @@
 // @name         Free Copy
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.3
+// @version      0.1.4
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Free%20Copy.js
@@ -37,9 +37,11 @@
         $('#area-content-article').on('copy', onCopy);
     }
     if (url.host === 'www.bilibili.com' && url.pathname.startsWith('/read')) {
-        $(document).on('copy', onCopy);
-        $('.article-holder').on('copy', onCopy);
-        $('.unable-reprint').css('user-select', 'text');
+        setTimeout(function () {
+            $(document).on('copy', onCopy);
+            $('.article-holder').on('copy', onCopy);
+            $('.unable-reprint').css('user-select', 'text');
+        }, 1000);
     }
     if (url.host === 'www.zhihu.com') {
         $(document).on('copy', onCopy);
