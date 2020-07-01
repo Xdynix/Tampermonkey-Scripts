@@ -5,8 +5,8 @@
 // @version      0.0.1
 // @description  Remove image watermarks.
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/No%20Image%20Watermark.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/No%20Image%20Watermark.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/No%20Image%20Watermark.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/No%20Image%20Watermark.js
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        https://www.gcores.com/*
 // @match        https://www.yystv.cn/*

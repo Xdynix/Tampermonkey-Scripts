@@ -5,8 +5,8 @@
 // @version      0.2.0
 // @description  Redirect sites to HTTPS
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/HTTP%20to%20HTTPS.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/HTTP%20to%20HTTPS.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/HTTP%20to%20HTTPS.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/HTTP%20to%20HTTPS.js
 // @match        http://jandan.net/*
 // @match        http://meipin.im/*
 // @match        http://www.anitama.cn/*

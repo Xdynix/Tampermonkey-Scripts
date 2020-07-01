@@ -5,8 +5,8 @@
 // @version      0.2.0
 // @description  Add link from Pixiv tag page to dictionary page.
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Pixiv%20Tag%20to%20Dic.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/Pixiv%20Tag%20to%20Dic.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Pixiv%20Tag%20to%20Dic.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Pixiv%20Tag%20to%20Dic.js
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
 // @match        https://www.pixiv.net/*
 // @grant        none
