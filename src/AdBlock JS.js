@@ -2,7 +2,7 @@
 // @name         AdBlock JS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.5
+// @version      0.1.6
 // @description  Custom ad-block using js.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
@@ -12,6 +12,7 @@
 // @match        *://*.wikihow.com/*
 // @match        *://www.tsdm.live/*
 // @match        *://www.pixiv.net/*
+// @match        *://share.dmhy.org/*
 // @grant        none
 // ==/UserScript==
 
@@ -52,6 +53,11 @@
                 }
             });
         }, 'div:last-child');
+    }
+    if (url.host === 'share.dmhy.org') {
+        loopApplyIfMatch(function (elements, loop) {
+            elements.remove();
+        }, 'iframe');
     }
 
     console.log('No way!');
