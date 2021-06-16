@@ -2,7 +2,7 @@
 // @name         Free Copy
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.5
+// @version      0.1.6
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Free%20Copy.js
@@ -22,9 +22,10 @@
     const url = new URL(window.location.href);
 
     function onCopy(e) {
-        e.preventDefault();
         const clipboardData = window.clipboardData || e.originalEvent.clipboardData;
-        clipboardData.setData('text/plain', document.getSelection().toString());
+        clipboardData.setData('text/plain', window.getSelection().toString());
+        e.preventDefault();
+        e.stopPropagation();
     }
 
     if (url.host === 'pad.skyozora.com' && url.pathname.startsWith('/news')) {
@@ -42,7 +43,7 @@
     if (url.host === 'www.bilibili.com' && url.pathname.startsWith('/read')) {
         setTimeout(function () {
             $(document).on('copy', onCopy);
-            $('.article-holder').on('copy', onCopy);
+            $('#article-content').on('copy', onCopy);
             $('.unable-reprint').css('user-select', 'text');
         }, 1000);
     }
