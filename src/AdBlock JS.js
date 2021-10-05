@@ -2,17 +2,18 @@
 // @name         AdBlock JS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.6
+// @version      0.1.7
 // @description  Custom ad-block using js.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
-// @match        *://tieba.baidu.com/*
 // @match        *://*.wikihow.com/*
+// @match        *://jandan.net/*
+// @match        *://share.dmhy.org/*
+// @match        *://tieba.baidu.com/*
 // @match        *://www.tsdm.live/*
 // @match        *://www.pixiv.net/*
-// @match        *://share.dmhy.org/*
 // @grant        none
 // ==/UserScript==
 
@@ -31,6 +32,12 @@
         }, interval);
     }
 
+    if (url.host === 'jandan.net') {
+        loopApplyIfMatch(elements => elements.remove(), '.google-auto-placed');
+    }
+    if (url.host === 'share.dmhy.org') {
+        loopApplyIfMatch(elements => elements.remove(), 'iframe');
+    }
     if (url.host === 'tieba.baidu.com') {
         $('.wrap1').css({background: 'initial', 'background-color': '#dceffe'});
     }
@@ -53,11 +60,6 @@
                 }
             });
         }, 'div:last-child');
-    }
-    if (url.host === 'share.dmhy.org') {
-        loopApplyIfMatch(function (elements, loop) {
-            elements.remove();
-        }, 'iframe');
     }
 
     console.log('No way!');
