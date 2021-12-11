@@ -2,7 +2,7 @@
 // @name         Free Copy
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.2.0
+// @version      0.2.1
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Free%20Copy.js
@@ -15,6 +15,7 @@
 // @match        *://bbs.nga.cn/*
 // @match        *://ngabbs.com/*
 // @match        *://nga.178.com/*
+// @match        *://www.dlsite.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -32,14 +33,18 @@
         e.stopPropagation();
     }
 
-    if (url.host === 'pad.skyozora.com' && url.pathname.startsWith('/news')) {
-        $('*')
+    function setCssUserSelect(elements) {
+        return $(elements)
             .css('user-select', 'auto')
             .css('-ms-user-select', 'auto')
             .css('-moz-user-select', 'auto')
             .css('-khtml-user-select', 'auto')
             .css('-webkit-user-select', 'auto')
             .css('-webkit-touch-callout', 'default');
+    }
+
+    if (url.host === 'pad.skyozora.com' && url.pathname.startsWith('/news')) {
+        setCssUserSelect('*');
     }
     if (url.host === 'www.anitama.cn') {
         $('#area-content-article').on('copy', onCopy);
@@ -57,6 +62,9 @@
     if (url.host === 'bbs.nga.cn' || url.host === 'ngabbs.com' || url.host === 'nga.178.com') {
         const stripTail = s => s.replace(/\n\nhttps:\/\/.*read\.php\?.*$/gm, '');
         $('.ubbcode').on('copy', e => onCopy(e, stripTail));
+    }
+    if (url.host === 'www.dlsite.com') {
+        setCssUserSelect('*');
     }
 
     console.log('Freedom!!!');
