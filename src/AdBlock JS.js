@@ -2,12 +2,13 @@
 // @name         AdBlock JS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.7
+// @version      0.1.8
 // @description  Custom ad-block using js.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
+// @match        *://*.fandom.com/*
 // @match        *://*.wikihow.com/*
 // @match        *://jandan.net/*
 // @match        *://share.dmhy.org/*
@@ -60,6 +61,15 @@
                 }
             });
         }, 'div:last-child');
+    }
+    if (url.host.endsWith('fandom.com')) {
+        for (const rule of [
+            '.top-ads-container',
+            '.ad-slot',
+            '#WikiaAdInContentPlaceHolder',
+        ]) {
+            loopApplyIfMatch(elements => elements.remove(), rule);
+        }
     }
 
     console.log('No way!');
