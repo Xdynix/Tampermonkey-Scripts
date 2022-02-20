@@ -20,5 +20,6 @@
 (function () {
     'use strict';
 
+    // noinspection HttpUrlsUsage
     window.location.href = window.location.href.replace('http://', 'https://');
 })();
