@@ -2,7 +2,7 @@
 // @name         AdBlock JS
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.1.8
+// @version      0.1.9
 // @description  Custom ad-block using js.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
@@ -64,8 +64,9 @@
     }
     if (url.host.endsWith('fandom.com')) {
         for (const rule of [
-            '.top-ads-container',
             '.ad-slot',
+            '.gpt-ad',
+            '.top-ads-container',
             '#WikiaAdInContentPlaceHolder',
         ]) {
             loopApplyIfMatch(elements => elements.remove(), rule);
