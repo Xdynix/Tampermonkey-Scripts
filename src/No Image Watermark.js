@@ -2,12 +2,12 @@
 // @name         No Image Watermark
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.0.1
+// @version      0.0.2
 // @description  Remove image watermarks.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/No%20Image%20Watermark.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/No%20Image%20Watermark.js
-// @require      http://code.jquery.com/jquery-3.3.1.min.js
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @match        https://www.gcores.com/*
 // @match        https://www.yystv.cn/*
 // @grant        none
@@ -19,7 +19,6 @@
 
     const $ = window.jQuery.noConflict(true);
     const url = new URL(window.location.href);
-
 
     function processElements(elements, attrName, patterns) {
         elements.each(function () {
