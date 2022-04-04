@@ -2,7 +2,7 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.0.0
+// @version      1.0.1
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Misc%20Rules.js
@@ -33,5 +33,10 @@
         // Enable USPS login autocomplete.
         $('form input[name=username]').attr('autocomplete', 'on');
         console.log('What\'s wrong with you USPS?');
+    }
+
+    if (url.host === 'trackings.post.japanpost.jp') {
+        $(document).off('keydown');
+        console.log('I have control.');
     }
 })();
