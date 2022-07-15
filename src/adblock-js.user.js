@@ -5,8 +5,8 @@
 // @version      0.1.10
 // @description  Custom ad-block using js.
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/AdBlock%20JS.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/adblock-js.user.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/adblock-js.user.js
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @match        *://*.fandom.com/*
 // @match        *://*.wikihow.com/*

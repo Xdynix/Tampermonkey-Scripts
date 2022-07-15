@@ -5,8 +5,8 @@
 // @version      1.1.0
 // @description  Misc rules.
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Misc%20Rules.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Misc%20Rules.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @match        *://*/*
 // @grant        none

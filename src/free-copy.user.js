@@ -5,8 +5,8 @@
 // @version      0.2.2
 // @description  Enable copying on some sites.
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Free%20Copy.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Free%20Copy.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/free-copy.user.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/free-copy.user.js
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @match        *://pad.skyozora.com/*
 // @match        *://www.anitama.cn/*

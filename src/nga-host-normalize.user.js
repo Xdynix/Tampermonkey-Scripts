@@ -5,8 +5,8 @@
 // @version      1.0.0
 // @description  Redirect sites to HTTPS
 // @author       Xdynix
-// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/NGA%20Host%20Normalize.js
-// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/NGA%20Host%20Normalize.js
+// @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/nga-host-normalize.user.js
+// @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/nga-host-normalize.user.js
 // @match        https://nga.178.com/*
 // @match        https://ngabbs.com/*
 // @run-at       document-start
