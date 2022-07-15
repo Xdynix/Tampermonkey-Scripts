@@ -2,7 +2,7 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.0.0
+// @version      1.1.0
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/Misc%20Rules.js
@@ -33,5 +33,30 @@
         // Enable USPS login autocomplete.
         $('form input[name=username]').attr('autocomplete', 'on');
         console.log('What\'s wrong with you USPS?');
+    }
+
+    if (url.host === 'www.bilibili.com') {
+        setInterval(() => {
+            const searchKeyAllowList = ['p', 't'];
+            const url = new URL(window.location.href);
+            const urlParams = new URLSearchParams(url.search);
+
+            let searchParamsChanged = false;
+            for (const key of Array.from(urlParams.keys())) {
+                if (!searchKeyAllowList.includes(key)) {
+                    urlParams.delete(key);
+                    searchParamsChanged = true;
+                }
+            }
+            if (urlParams.get('p') === '1') {
+                urlParams.delete('p');
+                searchParamsChanged = true;
+            }
+
+            if (searchParamsChanged) {
+                url.search = urlParams.toString();
+                history.replaceState(null, null, url.toString());
+            }
+        }, 100);
     }
 })();
