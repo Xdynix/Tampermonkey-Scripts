@@ -2,7 +2,7 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.1.0
+// @version      1.2.0
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
@@ -36,6 +36,7 @@
     }
 
     if (url.host === 'www.bilibili.com') {
+        // Normalize URL
         setInterval(() => {
             const searchKeyAllowList = ['p', 't'];
             const url = new URL(window.location.href);
@@ -57,6 +58,14 @@
                 url.search = urlParams.toString();
                 history.replaceState(null, null, url.toString());
             }
+        }, 100);
+
+        // Remove search link in comments
+        setInterval(() => {
+            $('span.reply-content > a.jump-link.search-word').replaceWith(function () {
+                return $(this).text();
+            });
+            $('span.reply-content > i.icon.search-word').remove();
         }, 100);
     }
 })();
