@@ -2,7 +2,7 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.2.1
+// @version      1.2.2
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
@@ -33,6 +33,12 @@
         // Enable USPS login autocomplete.
         $('form input[name=username]').attr('autocomplete', 'on');
         console.log('What\'s wrong with you USPS?');
+    }
+
+    if (url.toString().startsWith('https://login.irvinecompany.com/login')) {
+        // Enable USPS login autocomplete.
+        $('input[name=email]').attr('autocomplete', 'on');
+        console.log('What\'s wrong with you Irvine?');
     }
 
     if (url.host === 'www.bilibili.com') {
