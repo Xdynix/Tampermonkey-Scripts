@@ -2,12 +2,12 @@
 // @name         Free Copy
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      0.2.2
+// @version      0.2.3
 // @description  Enable copying on some sites.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/free-copy.user.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/free-copy.user.js
-// @require      https://code.jquery.com/jquery-3.6.0.min.js
+// @require      https://code.jquery.com/jquery-4.0.0-beta.min.js
 // @match        *://pad.skyozora.com/*
 // @match        *://www.anitama.cn/*
 // @match        *://www.bilibili.com/*

@@ -2,12 +2,12 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.2.2
+// @version      1.2.3
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
 // @downloadURL  https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
-// @require      https://code.jquery.com/jquery-3.6.0.min.js
+// @require      https://code.jquery.com/jquery-4.0.0-beta.min.js
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -36,7 +36,7 @@
     }
 
     if (url.toString().startsWith('https://login.irvinecompany.com/login')) {
-        // Enable USPS login autocomplete.
+        // Enable Irvine login autocomplete.
         $('input[name=email]').attr('autocomplete', 'on');
         console.log('What\'s wrong with you Irvine?');
     }
