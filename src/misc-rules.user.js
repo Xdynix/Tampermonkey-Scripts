@@ -2,7 +2,7 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.2.3
+// @version      1.2.4
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
@@ -79,4 +79,19 @@
         // Modify styles
         $('html > head').append($('<style>.show_big_album_img_arrow { width: 30% !important; }</style>'));
     }
+
+    // Disable Bilibili player autoplay
+    setInterval(() => {
+        const players = $('iframe[src*="player.bilibili.com"]');
+        players.each(function () {
+            const srcUrl = new URL(this.src);
+            const srcUrlParams = new URLSearchParams(srcUrl.search);
+            if (srcUrlParams.get('autoplay') !== '0') {
+                srcUrlParams.set('autoplay', '0');
+                srcUrl.search = srcUrlParams.toString();
+                this.src = srcUrl.toString();
+                console.log('You shall not pass!');
+            }
+        });
+    }, 100);
 })();
