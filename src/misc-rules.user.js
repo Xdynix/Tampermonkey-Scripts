@@ -2,7 +2,7 @@
 // @name         Misc Rules
 // @namespace    https://github.com/Xdynix/Tampermonkey-Scripts
 // @homepage     https://github.com/Xdynix/Tampermonkey-Scripts
-// @version      1.2.4
+// @version      1.2.5
 // @description  Misc rules.
 // @author       Xdynix
 // @updateURL    https://github.com/Xdynix/Tampermonkey-Scripts/raw/master/src/misc-rules.user.js
@@ -44,7 +44,7 @@
     if (url.host === 'www.bilibili.com') {
         // Normalize URL
         setInterval(() => {
-            const searchKeyAllowList = ['p', 't'];
+            const searchKeyAllowList = ['p', 't', 'bvid'];
             const url = new URL(window.location.href);
             const urlParams = new URLSearchParams(url.search);
 
@@ -80,7 +80,7 @@
         $('html > head').append($('<style>.show_big_album_img_arrow { width: 30% !important; }</style>'));
     }
 
-    // Disable Bilibili player autoplay
+    // Disable Bilibili external player autoplay
     setInterval(() => {
         const players = $('iframe[src*="player.bilibili.com"]');
         players.each(function () {
